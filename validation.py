@@ -20,4 +20,12 @@ def validateAmount(amount):
         amount = float(amount)  
     except ValueError:
         invalidExpense("Amount must be a number") 
-    if amount
+    if amount <= 0:
+        invalidExpense("Amount must be greater than 0!")
+    return amount
+
+def validateCategory(category):
+    category = category.strip().lower()
+    if category not in CATEGORIES:
+        invalidExpense("Invalid category!")
+    return category
