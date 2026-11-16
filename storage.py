@@ -7,6 +7,11 @@ def loadExpenses():
             expenses = json.load(file)
 
         return expenses
+    except FileNotFoundError:
+        return []
+
+    except json.JSONDecodeError:
+        return []
 
 def saveExpenses(expenses):
     with open (DATA_FILE, "w", encoding="utf-8") as file:
