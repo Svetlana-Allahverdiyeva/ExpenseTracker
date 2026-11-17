@@ -1,5 +1,10 @@
 import json
-DATA_FILE = "data/expenses.json"
+import os
+#DATA_FILE = "data/expenses.json"
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, "data", "expenses.json")
 
 def loadExpenses():
     try:
@@ -14,5 +19,7 @@ def loadExpenses():
         return []
 
 def saveExpenses(expenses):
+    os.makedirs("data", exist_ok=True)
+
     with open (DATA_FILE, "w", encoding="utf-8") as file:
         json.dump(expenses, file, indent=4, ensure_ascii=False)

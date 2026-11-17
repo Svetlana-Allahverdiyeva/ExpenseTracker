@@ -18,14 +18,19 @@ def validateTitle(title):
 def validateAmount(amount):
     try:
         amount = float(amount)  
-    except ValueError:
+    except (ValueError, TypeError):
         invalidExpense("Amount must be a number") 
+
     if amount <= 0:
         invalidExpense("Amount must be greater than 0!")
+
     return amount
 
 def validateCategory(category):
     category = category.strip().lower()
-    if category not in CATEGORIES:
-        invalidExpense("Invalid category!")
-    return category
+
+    for item in CATEGORIES:
+        if item.lower() == category:
+            return item
+
+    invalidExpense("Invalid category!")

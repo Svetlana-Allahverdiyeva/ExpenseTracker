@@ -18,7 +18,7 @@ def exportToCSV():
     fieldNames = ["id", "title", "amount", "category", "date"]
 
     with open(filePath, "w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=filedNames)
+        writer = csv.DictWriter(file, fieldnames=fieldNames)
         writer.writeheader()
         writer.writerows(expenses)
 

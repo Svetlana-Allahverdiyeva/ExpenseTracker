@@ -32,7 +32,7 @@ def searchExpense(expenseID):
             return expense
     expensesNotFound()
 
-    def updateExpense(expenseID, title, amount, category):
+def updateExpense(expenseID, title, amount, category):
         expenses = loadExpenses()
 
         for expense in expenses:
