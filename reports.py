@@ -1,4 +1,5 @@
 import csv 
+import os
 from expenses import getAllExpenses
 
 def totalExpenses():
@@ -16,6 +17,7 @@ def exportToCSV():
 
     filePath = "data/expenses.csv"
     fieldNames = ["id", "title", "amount", "category", "date"]
+    os.makedirs(os.path.dirname(filePath), exist_ok=True)
 
     with open(filePath, "w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=fieldNames)

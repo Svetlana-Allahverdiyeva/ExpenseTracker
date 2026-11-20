@@ -5,5 +5,19 @@
         "amount": 50.0,
         "category": "Shopping",
         "date": "2026-11-18"
+    },
+    {
+        "id": "9fc8cfa7",
+        "title": "Book",
+        "amount": 25.0,
+        "category": "Education",
+        "date": "2026-11-20"
+    },
+    {
+        "id": "8d48ea96",
+        "title": "Notebook",
+        "amount": 30.0,
+        "category": "Education",
+        "date": "2026-11-20"
     }
 ]

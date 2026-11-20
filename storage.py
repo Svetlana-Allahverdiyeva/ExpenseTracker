@@ -19,7 +19,7 @@ def loadExpenses():
         return []
 
 def saveExpenses(expenses):
-    os.makedirs("data", exist_ok=True)
-
+    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    
     with open (DATA_FILE, "w", encoding="utf-8") as file:
         json.dump(expenses, file, indent=4, ensure_ascii=False)

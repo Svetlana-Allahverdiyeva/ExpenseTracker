@@ -28,6 +28,7 @@ def startApp():
         showMenu()
         
         choice =input("Enter your choice: ")
+        
         try:
             if choice == "1":
                 title = input("Enter expense title: ")
@@ -59,10 +60,7 @@ def startApp():
                 title = input("Enter new title: ")
                 amount = input("Enter new amount: ")
                 category = input("Enter new category: ")
-                updateExpense(expenseID, title, amount, category)
-                print("Expense updated successfully!")
-
-
+                
                 updateExpense(expenseID, title, amount, category)
                 print("Expense updated successfully!")
 
